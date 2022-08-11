@@ -13,26 +13,37 @@ def get_width(code):
             return width
     return 1
 
-def get_index(string, begin, total_width):
+def get_index(string, begin, width):
     idx = begin
-    size = 0
-    while size < total_width and idx < len(string):
+    scanned_size = 0
+    string_length = len(string)
+    while scanned_size < width and idx < string_length:
         o = ord(string[idx])
-        width = get_width(o)
-        if size + width > total_width:
+        char_width = get_width(o)
+        if scanned_size + char_width > width:
             break
-        size += width
+        scanned_size += char_width
         idx += 1
-    return idx, total_width - size
+    return idx, width - scanned_size
 
-def substr(string, beg, length=-1, fill=False):
+def substr(string, beg, length=-1, fill=True):
     if type(string) == bytes:
         raise ValueError("bytes type not allowed")
 
     if length < 0:
         return string
 
+    fill_prefix = ""
+    fill_suffix = ""
     idx_beg, fillsize = get_index(string, 0, beg)
+    if fill:
+        fill_prefix = " " * fillsize
+        idx_beg +=fillsize
+        length -= fillsize
+
     idx_end, fillsize = get_index(string, idx_beg, length)
-    return string[idx_beg:idx_end] + (' ' * ( fillsize if fill else 0 ) )
+    if fill:
+        fill_suffix = " " * fillsize
+
+    return fill_prefix + string[idx_beg:idx_end] + fill_suffix
 
