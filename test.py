@@ -1,11 +1,36 @@
-
 import __init__ as termchars
 
-import random
-
-s = "[고지] 하나멤버스 광고성 정보 수신동의 내역 안내"
-s = "[그렙] 프로그래머스 기업 이용약관 개정 공지"
-
-beg = 0
-for size in range(0, 50):
-    print(beg, size, termchars.substr(s, beg, size, True) + "####")
+haystack = "말할 수 없는 것에 관해서는 침묵해야 한다."
+print( "({},{},True) BEG:".format(0, 1) + termchars.substr(haystack, 0, 1) + ":END" )
+print( "({},{},True) BEG:".format(0, 2) + termchars.substr(haystack, 0, 2) + ":END" )
+print( "({},{},True) BEG:".format(0, 3) + termchars.substr(haystack, 0, 3) + ":END" )
+print( "({},{},True) BEG:".format(0, 4) + termchars.substr(haystack, 0, 4) + ":END" )
+print( "({},{},True) BEG:".format(0, 5) + termchars.substr(haystack, 0, 5) + ":END" )
+print( "({},{},True) BEG:".format(0, 6) + termchars.substr(haystack, 0, 6) + ":END" )
+print( "({},{},True) BEG:".format(0, 7) + termchars.substr(haystack, 0, 7) + ":END" )
+print( "--" )
+print( "({},{},True) BEG:".format(0, 10) + termchars.substr(haystack, 0, 10) + ":END" )
+print( "({},{},True) BEG:".format(1, 10) + termchars.substr(haystack, 1, 10) + ":END" )
+print( "({},{},True) BEG:".format(2, 10) + termchars.substr(haystack, 2, 10) + ":END" )
+print( "({},{},True) BEG:".format(3, 10) + termchars.substr(haystack, 3, 10) + ":END" )
+print( "({},{},True) BEG:".format(4, 10) + termchars.substr(haystack, 4, 10) + ":END" )
+print( "({},{},True) BEG:".format(5, 10) + termchars.substr(haystack, 5, 10) + ":END" )
+print( "({},{},True) BEG:".format(6, 10) + termchars.substr(haystack, 6, 10) + ":END" )
+print( "--" )
+haystack = "あの風は誰を呼ぶのか雨の影"
+print( "({},{},True) BEG:".format(12, 1) + termchars.substr(haystack, 12, 1) + ":END" )
+print( "({},{},True) BEG:".format(12, 4) + termchars.substr(haystack, 12, 4) + ":END" )
+print( "({},{},True) BEG:".format(12, 7) + termchars.substr(haystack, 12, 7) + ":END" )
+print( "({},{},True) BEG:".format(12, 10) + termchars.substr(haystack, 12, 10) + ":END" )
+print( "({},{},True) BEG:".format(12, 13) + termchars.substr(haystack, 12, 13) + ":END" )
+print( "({},{},True) BEG:".format(12, 16) + termchars.substr(haystack, 12, 16) + ":END" )
+print( "({},{},True) BEG:".format(12, 19) + termchars.substr(haystack, 12, 19) + ":END" )
+print( "--" )
+print( "({},{},False) BEG:".format(12, 1) + termchars.substr(haystack, 12, 1, False) + ":END" )
+print( "({},{},False) BEG:".format(12, 4) + termchars.substr(haystack, 12, 4, False) + ":END" )
+print( "({},{},False) BEG:".format(12, 7) + termchars.substr(haystack, 12, 7, False) + ":END" )
+print( "({},{},False) BEG:".format(12, 10) + termchars.substr(haystack, 12, 10, False) + ":END" )
+print( "({},{},False) BEG:".format(12, 13) + termchars.substr(haystack, 12, 13, False) + ":END" )
+print( "({},{},False) BEG:".format(12, 16) + termchars.substr(haystack, 12, 16, False) + ":END" )
+print( "({},{},False) BEG:".format(12, 19) + termchars.substr(haystack, 12, 19, False) + ":END" )
+print( "--" )
